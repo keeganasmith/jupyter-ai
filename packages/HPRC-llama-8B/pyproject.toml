@@ -3,7 +3,7 @@ requires = ["hatchling>=1.4.0", "jupyterlab~=4.0"]
 build-backend = "hatchling.build"
 
 [project]
-name = "HPRC_llama_3.1_8B"
+name = "HPRC_llama_8B"
 readme = "README.md"
 license = { file = "LICENSE" }
 requires-python = ">=3.9"
@@ -30,13 +30,13 @@ dependencies = ["jupyter_ai"]
 test = ["coverage", "pytest", "pytest-asyncio", "pytest-cov"]
 
 [project.entry-points."jupyter_ai.model_providers"]
-hprc-provider = "provider:TestProvider"
+test-provider = "HPRC_llama_8B.provider:TestProvider"
 
 [project.entry-points."jupyter_ai.chat_handlers"]
-test-slash-command = "HPRC_llama_3.1_8B.slash_command:TestSlashCommand"
+test-slash-command = "HPRC_llama_8B.slash_command:TestSlashCommand"
 
 [tool.hatch.build.hooks.version]
-path = "HPRC_llama_3.1_8B/_version.py"
+path = "HPRC_llama_8B/_version.py"
 
 [tool.check-wheel-contents]
 ignore = ["W002"]

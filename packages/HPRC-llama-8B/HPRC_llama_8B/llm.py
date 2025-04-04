@@ -3,6 +3,7 @@ from typing import Any, List, Optional
 from langchain_core.callbacks.manager import CallbackManagerForLLMRun
 from langchain_core.language_models.llms import LLM
 
+import requests
 
 class Llama_8B_LLM(LLM):
     model_id: str = "HPRC_llama_8B"
@@ -18,4 +19,13 @@ class Llama_8B_LLM(LLM):
         run_manager: Optional[CallbackManagerForLLMRun] = None,
         **kwargs: Any,
     ) -> str:
-        return f"Hello! I am a model for testing only. Model ID: {self.model_id}"
+        def send_question(prompt):
+            url = "http://10.72.10.12:5000/infer"
+            headers = {"Content-Type": "application/json"}
+            data = {
+                "input": prompt,
+                "length": 512
+            }
+            response = requests.post(url, headers=headers, json=data)
+            return response.json()["response"]
+        return send_question(prompt)

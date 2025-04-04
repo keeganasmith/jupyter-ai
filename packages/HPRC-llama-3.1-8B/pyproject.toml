@@ -1,0 +1,42 @@
+[build-system]
+requires = ["hatchling>=1.4.0", "jupyterlab~=4.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "HPRC_llama_3.1_8B"
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.9"
+classifiers = [
+    "Framework :: Jupyter",
+    "Framework :: Jupyter :: JupyterLab",
+    "Framework :: Jupyter :: JupyterLab :: 4",
+    "License :: OSI Approved :: BSD License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+version = "0.1.0"
+description = "A Jupyter AI extension."
+authors = [
+    { name = "Keegan", email = "keeganasmith2003@tamu.edu" },
+]
+dependencies = ["jupyter_ai"]
+
+[project.optional-dependencies]
+test = ["coverage", "pytest", "pytest-asyncio", "pytest-cov"]
+
+[project.entry-points."jupyter_ai.model_providers"]
+test-provider = "HPRC_llama_3.1_8B.provider:TestProvider"
+
+[project.entry-points."jupyter_ai.chat_handlers"]
+test-slash-command = "HPRC_llama_3.1_8B.slash_command:TestSlashCommand"
+
+[tool.hatch.build.hooks.version]
+path = "HPRC_llama_3.1_8B/_version.py"
+
+[tool.check-wheel-contents]
+ignore = ["W002"]

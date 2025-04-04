@@ -5,7 +5,7 @@ from langchain_core.language_models.llms import LLM
 import requests
 
 class TestLLM(LLM):
-    model_id: str
+    model_id: str = "HPRC LLAMA 3.1 8B instruct"
 
     @property
     def _llm_type(self) -> str:
@@ -28,3 +28,4 @@ class TestLLM(LLM):
             response = requests.post(url, headers=headers, json=data)
             return response.json()["response"]
         return send_question(prompt)
+

@@ -4,8 +4,8 @@ from langchain_core.callbacks.manager import CallbackManagerForLLMRun
 from langchain_core.language_models.llms import LLM
 
 
-class TestLLM(LLM):
-    model_id: str
+class Llama_8B_LLM(LLM):
+    model_id: str = "HPRC_llama_8B"
 
     @property
     def _llm_type(self) -> str:

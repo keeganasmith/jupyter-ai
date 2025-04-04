@@ -2,9 +2,9 @@ from typing import ClassVar, List
 
 from jupyter_ai import AuthStrategy, BaseProvider, Field
 
-from .llm import TestLLM
+from .llm import Llama_8B_LLM
 
-class TestProvider(BaseProvider, TestLLM):
+class HPRCProvider(BaseProvider, Llama_8B_LLM):
     """
     A test model provider implementation for developers to build from. A model
     provider inherits from 2 classes: 1) the `BaseProvider` class from
@@ -34,13 +34,13 @@ class TestProvider(BaseProvider, TestLLM):
     update the entry point there as well.
     """
 
-    id: ClassVar[str] = "test-provider"
+    id: ClassVar[str] = "HPRC-provider"
     """ID for this provider class."""
 
-    name: ClassVar[str] = "Test Provider"
+    name: ClassVar[str] = "HPRC Provider"
     """User-facing name of this provider."""
 
-    models: ClassVar[List[str]] = ["test-model-1"]
+    models: ClassVar[List[str]] = ["HPRC_llama_8B"]
     """List of supported models by their IDs. For registry providers, this will
     be just ["*"]."""
 

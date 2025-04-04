@@ -4,7 +4,7 @@ from jupyter_ai import AuthStrategy, BaseProvider, Field
 
 from .llm import TestLLM
 
-class TestProvider(BaseProvider, TestLLM):
+class HPRCProvider(BaseProvider, TestLLM):
     """
     A test model provider implementation for developers to build from. A model
     provider inherits from 2 classes: 1) the `BaseProvider` class from

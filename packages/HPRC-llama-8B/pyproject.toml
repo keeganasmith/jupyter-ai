@@ -30,7 +30,7 @@ dependencies = ["jupyter_ai"]
 test = ["coverage", "pytest", "pytest-asyncio", "pytest-cov"]
 
 [project.entry-points."jupyter_ai.model_providers"]
-test-provider = "HPRC_llama_8B.provider:TestProvider"
+hprc-provider = "HPRC_llama_8B.provider:HPRCProvider"
 
 [project.entry-points."jupyter_ai.chat_handlers"]
 test-slash-command = "HPRC_llama_8B.slash_command:TestSlashCommand"

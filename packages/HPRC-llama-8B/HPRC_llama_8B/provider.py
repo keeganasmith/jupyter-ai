@@ -34,7 +34,7 @@ class HPRCProvider(BaseProvider, Llama_8B_LLM):
     update the entry point there as well.
     """
 
-    id: ClassVar[str] = "HPRC-provider"
+    id: ClassVar[str] = "hprc-provider"
     """ID for this provider class."""
 
     name: ClassVar[str] = "HPRC Provider"

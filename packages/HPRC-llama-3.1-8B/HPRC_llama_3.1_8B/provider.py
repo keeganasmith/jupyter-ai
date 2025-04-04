@@ -4,7 +4,6 @@ from jupyter_ai import AuthStrategy, BaseProvider, Field
 
 from .llm import TestLLM
 
-
 class TestProvider(BaseProvider, TestLLM):
     """
     A test model provider implementation for developers to build from. A model
@@ -34,14 +33,13 @@ class TestProvider(BaseProvider, TestLLM):
     `pyproject.toml`. If this class or parent module is renamed, make sure the
     update the entry point there as well.
     """
-
-    id: ClassVar[str] = "test-provider"
+    id: ClassVar[str] = "HPRC"
     """ID for this provider class."""
 
-    name: ClassVar[str] = "Test Provider"
+    name: ClassVar[str] = "HPRC provider"
     """User-facing name of this provider."""
 
-    models: ClassVar[List[str]] = ["test-model-1"]
+    models: ClassVar[List[str]] = ["HPRC LLAMA 3.1 8B instruct"]
     """List of supported models by their IDs. For registry providers, this will
     be just ["*"]."""
 

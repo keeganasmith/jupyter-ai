@@ -20,11 +20,12 @@ class Llama_8B_LLM(LLM):
         **kwargs: Any,
     ) -> str:
         def send_question(prompt):
-            url = "http://10.72.10.12:5000/infer"
+            url = "http://10.72.10.19:5000/infer"
             headers = {"Content-Type": "application/json"}
             data = {
                 "input": prompt,
-                "length": 512
+                "length": 512,
+                "model": "llama_8B"
             }
             response = requests.post(url, headers=headers, json=data)
             return response.json()["response"]

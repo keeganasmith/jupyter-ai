@@ -67,3 +67,4 @@ class HPRCProvider(BaseProvider, Llama_8B_LLM):
     fields: ClassVar[List[Field]] = []
     """User inputs expected by this provider when initializing it. Each `Field` `f`
     should be passed in the constructor as a keyword argument, keyed by `f.key`."""
+    unsupported_slash_commands = {"/learn", "/generate"}

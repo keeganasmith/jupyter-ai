@@ -27,6 +27,7 @@ class Llama_8B_LLM(LLM):
                 "length": 512,
                 "model": "llama_8B"
             }
+            print("sending to url: ", url)
             response = requests.post(url, headers=headers, json=data)
             return response.json()["response"]
         return send_question(prompt)

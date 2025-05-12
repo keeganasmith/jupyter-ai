@@ -80,7 +80,7 @@ class AskChatHandler(BaseChatHandler):
             self.llm,
             self.retriever,
             memory=memory,
-            condense_question_prompt=CONDENSE_PROMPT,
+            condense_question_prompt="",
             verbose=False,
         )
 

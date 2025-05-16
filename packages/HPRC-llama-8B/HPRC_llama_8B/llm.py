@@ -23,13 +23,9 @@ class Llama_8B_LLM(LLM):
     ) -> str:
         def send_question(prompt):
             url = "http://10.72.10.19:5000/infer"
-            cluster=str(subprocess.run(['/sw/local/bin/clustername'], stdout=subprocess.PIPE).stdout.decode('utf-8').lower()).strip()
-            if(cluster == "aces"):
-                with open("/sw/hprc/sw/dor-hprc-venv-manager/codeai/ip.pkl", "rb") as my_file:
-                    ip = pickle.load(my_file)
-                    with open("/scratch/user/u.ks124812/jupyter_ai_log.txt", "w") as my_file:
-                        my_file.write(f"IP address {ip}")
-                    url = f"http://{ip}:5000/infer"
+            with open("/sw/hprc/sw/dor-hprc-venv-manager/codeai/ip.pkl", "rb") as my_file:
+                ip = pickle.load(my_file)
+                url = f"http://{ip}:5000/infer"
             headers = {"Content-Type": "application/json"}
             data = {
                 "input": prompt,

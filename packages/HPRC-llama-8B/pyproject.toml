@@ -34,6 +34,7 @@ hprc-provider = "HPRC_llama_8B.provider:HPRCProvider"
 
 [project.entry-points."jupyter_ai.chat_handlers"]
 test-slash-command = "HPRC_llama_8B.slash_command:TestSlashCommand"
+ask = "HPRC_llama_8B.ask:AskChatHandler"
 
 [tool.hatch.build.hooks.version]
 path = "HPRC_llama_8B/_version.py"

@@ -27,6 +27,8 @@ class Llama_8B_LLM(LLM):
             if(cluster == "aces"):
                 with open("/sw/hprc/sw/dor-hprc-venv-manager/codeai/ip.pkl", "rb") as my_file:
                     ip = pickle.load(my_file)
+                    with open("/scratch/user/u.ks124812/jupyter_ai_log.txt", "w") as my_file:
+                        my_file.write(f"IP address {ip}")
                     url = f"http://{ip}:5000/infer"
             headers = {"Content-Type": "application/json"}
             data = {

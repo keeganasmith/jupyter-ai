@@ -8,7 +8,7 @@ import subprocess
 import pickle
 
 class Llama_8B_LLM(LLM):
-    model_id: str = "HPRC_llama_8B"
+    model_id: str = "HPRC_llama_70B"
 
     @property
     def _llm_type(self) -> str:
@@ -29,7 +29,7 @@ class Llama_8B_LLM(LLM):
             headers = {"Content-Type": "application/json"}
             data = {
                 "input": prompt,
-                "length": 512,
+                "length": 1024,
                 "model": "llama_8B"
             }
             print("sending to url: ", url)

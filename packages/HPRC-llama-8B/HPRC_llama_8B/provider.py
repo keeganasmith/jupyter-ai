@@ -40,7 +40,7 @@ class HPRCProvider(BaseProvider, Llama_8B_LLM):
     name: ClassVar[str] = "HPRC Provider"
     """User-facing name of this provider."""
 
-    models: ClassVar[List[str]] = ["HPRC_llama_8B"]
+    models: ClassVar[List[str]] = ["HPRC_llama_70B"]
     """List of supported models by their IDs. For registry providers, this will
     be just ["*"]."""
 
